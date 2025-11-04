@@ -88,8 +88,8 @@ const HRLogin = () => {
                         </button>
                     </form>
                     <div className="text-center mt-6">
-                        <Link to="/client/login" className="text-sm text-indigo-800 hover:text-pink-600 font-semibold transition-colors">
-                            &larr; Not an HR? Back to Client Login
+                        <Link to="/" className="text-sm text-indigo-800 hover:text-pink-600 font-semibold transition-colors">
+                            &larr; Not an HR? Back to Home Page
                         </Link>
                     </div>
                 </div>
