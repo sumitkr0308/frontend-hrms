@@ -1,0 +1,4 @@
+@import "tailwindcss";
+.form-input {
+  @apply block w-full rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm transition-colors disabled:bg-slate-200 disabled:cursor-not-allowed;
+}
