@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import AddJobModal from "../Components/AddJobModal";
+import AddJobModal from "../components/AddJobModal";
 import CandidateModal from "../components/CandidateModal";
 import {
     Bars3Icon,
