@@ -401,13 +401,8 @@ const HRDashboard = () => {
         setActiveView(view);
         setIsSidebarOpen(false);
 
-        // --- MODIFIED --- Fetch data if switching to 'candidates' view
-        // The fetchAllCandidatesPage call is now triggered by the useEffect
-        // dependencies (like sortStatus) changing.
-        // We just need to make sure we fetch if the list is empty.
         if (view === 'candidates') {
-            // If search is clear AND candidates are empty, fetch.
-            // The sortStatus will be set by the click handler *before* this.
+         
             if (!allCandidatesDebouncedSearch && allCandidates.length === 0) {
                 fetchAllCandidatesPage(1);
             }
