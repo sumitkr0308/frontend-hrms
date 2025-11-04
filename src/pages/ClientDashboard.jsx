@@ -106,12 +106,12 @@ const ClientDashboard = () => {
           <p className="text-gray-500 mt-1">Click on a role to view associated candidates.</p>
         </div>
         <div className="flex items-center gap-4">
-          <button
+          {/* <button
             onClick={() => setIsAddJobModalOpen(true)}
             className="bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-700"
           >
             Create New Job
-          </button>
+          </button> */}
           <button
             onClick={handleLogout}
             className="bg-slate-200 text-slate-800 py-2 px-4 rounded-lg hover:bg-slate-300"

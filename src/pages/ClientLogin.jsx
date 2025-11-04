@@ -9,11 +9,14 @@ const ClientLogin = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      const response = await fetch('http://localhost:4000/api/client/login', {
+      const response = await fetch(`${API_BASE_URL}/api/client/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

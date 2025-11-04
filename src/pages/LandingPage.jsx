@@ -13,48 +13,6 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] text-white">
-      {/* 🌟 Navigation Bar */}
-      <nav className="w-full backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50 shadow-md">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          {/* Logo + Name */}
-          <div
-            className="flex items-center gap-3 cursor-pointer group"
-            onDoubleClick={handleLogoDoubleClick}
-            title="Double-click for SuperAdmin"
-          >
-            <img
-              src={logo}
-              alt="HRMS Logo"
-              className="w-28 h-18 rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <span className="text-xl font-semibold bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
-              HRMS Portal
-            </span>
-          </div>
-
-          {/* Nav Links */}
-          <div className="flex items-center gap-8 text-sm font-medium">
-            <button
-              onClick={() => navigate("/")}
-              className="flex items-center gap-2 text-gray-300 hover:text-white transition"
-            >
-              <Home size={18} /> Home
-            </button>
-            <button
-              onClick={() => navigate("/about")}
-              className="flex items-center gap-2 text-gray-300 hover:text-white transition"
-            >
-              <Info size={18} /> About
-            </button>
-            <button
-              onClick={() => navigate("/contact")}
-              className="flex items-center gap-2 text-gray-300 hover:text-white transition"
-            >
-              <Phone size={18} /> Contact
-            </button>
-          </div>
-        </div>
-      </nav>
 
       {/* 🌈 Main Content */}
       <div className="flex flex-col items-center justify-center flex-grow p-6 text-center">
