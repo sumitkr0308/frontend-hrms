@@ -10,6 +10,7 @@ import {
   TrashIcon
 } from '@heroicons/react/24/outline';
 
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 // ✅ Reusable input field
 const InputField = ({ label, name, type = 'text', value, onChange, icon: Icon, ...props }) => (
   <div>
@@ -100,7 +101,7 @@ const SuperAdminDashboard = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:4000/api/superadmin/data', { headers: getAuthHeaders() });
+      const res = await fetch(`${API_BASE_URL}/api/superadmin/data`, { headers: getAuthHeaders() });
       if (!res.ok) throw new Error('Failed to fetch data');
       const data = await res.json();
       setHrs(data.hrs || []);
@@ -115,7 +116,7 @@ const SuperAdminDashboard = () => {
   const handleCreateClient = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:4000/api/superadmin/clients`, {
+      const res = await fetch(`${API_BASE_URL}/api/superadmin/clients`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(clientFields)
@@ -134,7 +135,7 @@ const SuperAdminDashboard = () => {
     e.preventDefault();
     if (!assignment.hrId || !assignment.clientId) return showToast('Please select both an HR and a Client.', 'error');
     try {
-      const res = await fetch('http://localhost:4000/api/superadmin/assign', {
+      const res = await fetch(`${API_BASE_URL}/api/superadmin/assign`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(assignment)
@@ -151,7 +152,7 @@ const SuperAdminDashboard = () => {
 
   const handleUpdate = async (userType, userId, data) => {
     try {
-      const res = await fetch(`http://localhost:4000/api/superadmin/${userType}/${userId}`, {
+      const res = await fetch(`${API_BASE_URL}/api/superadmin/${userType}/${userId}`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(data)
@@ -170,7 +171,7 @@ const SuperAdminDashboard = () => {
     const confirmText = userType === 'hrs' ? 'HR user' : 'Client';
     if (!window.confirm(`Are you sure you want to delete this ${confirmText}?`)) return;
     try {
-      const res = await fetch(`http://localhost:4000/api/superadmin/${userType}/${userId}`, {
+      const res = await fetch(`${API_BASE_URL}/api/superadmin/${userType}/${userId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
