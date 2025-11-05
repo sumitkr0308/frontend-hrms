@@ -45,7 +45,7 @@ const SelectField = ({ label, name, value, onChange, icon: Icon, children }) => 
 
   const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 const HrManager = ({ hrs, onDataChange, setEditingUser, onDelete, showToast }) => {
-  const [hrFields, setHrFields] = useState({ name: '', email: '', password: '', role: 'Junior' });
+  const [hrFields, setHrFields] = useState({ name: '', email: '', password: '', role: 'Recruiter' });
 
   const getAuthHeaders = () => ({
     'Content-Type': 'application/json',
