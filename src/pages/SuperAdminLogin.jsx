@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
 const SuperAdminLogin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -20,7 +22,7 @@ const SuperAdminLogin = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:4000/api/superadmin/login', {
+      const response = await fetch(`${API_BASE_URL}/api/superadmin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
