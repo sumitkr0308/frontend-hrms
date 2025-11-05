@@ -43,7 +43,7 @@ const SelectField = ({ label, name, value, onChange, icon: Icon, children }) => 
     </div>
 );
 
-
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 const HrManager = ({ hrs, onDataChange, setEditingUser, onDelete, showToast }) => {
   const [hrFields, setHrFields] = useState({ name: '', email: '', password: '', role: 'Junior' });
 
@@ -59,7 +59,7 @@ const HrManager = ({ hrs, onDataChange, setEditingUser, onDelete, showToast }) =
         return;
     }
     try {
-      const res = await fetch(`http://localhost:4000/api/superadmin/hrs`, {
+      const res = await fetch(`${API_BASE_URL}/api/superadmin/hrs`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(hrFields),
