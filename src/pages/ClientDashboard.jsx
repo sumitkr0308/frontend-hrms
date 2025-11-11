@@ -86,7 +86,7 @@ const ClientDashboard = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("clientToken");
-    navigate("/client/login");
+    navigate("/");
   };
 
   // The loading state prevents rendering the dashboard without authentication data.

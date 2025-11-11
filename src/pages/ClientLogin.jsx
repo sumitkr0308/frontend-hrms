@@ -1,7 +1,7 @@
 // src/pages/ClientLogin.jsx
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import logo from '../assets/hrms-logo1.png';
+import logo from '../assets/logo.png';
 
 const ClientLogin = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import logo from '../assets/hrms-logo1.png'; 
+import logo from '../assets/logo.png'; 
 import { AtSymbolIcon, KeyIcon } from '@heroicons/react/24/outline';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
@@ -75,7 +75,7 @@ const HRLogin = () => {
         <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700">
             <div className="relative w-full max-w-md m-4">
                 <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-white rounded-full  shadow-2xl">
-                    <img src={logo} alt="HRMS Logo" className="w-28 h-28 object-cover  rounded-full" />
+                    <img src={logo} alt="HRMS Logo" className="w-36 h-20 mx-auto shadow-2xl object-cover rounded-full hover:scale-110 transform transition-transform duration-500" />
                 </div>
                 <div className="mt-16 p-10 bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl">
                     <h1 className="text-4xl font-extrabold text-center text-indigo-900 mb-8">HR Portal Login</h1>

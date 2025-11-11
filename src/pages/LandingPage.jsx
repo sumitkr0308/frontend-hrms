@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Home, Info, Phone } from "lucide-react";
-import logo from "../assets/hrms-logo1.png"; // ensure correct path
+import logo from "../assets/logo.png"; // ensure correct path
 
 const LandingPage = () => {
   const navigate = useNavigate();
